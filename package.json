@@ -1,0 +1,37 @@
+{
+  "name": "alura-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "nodemon src/socket-back.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alura-cursos/alura-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alura-cursos/alura-docs/issues"
+  },
+  "homepage": "https://github.com/alura-cursos/alura-docs#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^4.21.2",
+    "mongodb": "6.19",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@stylistic/eslint-plugin": "^5.3.1",
+    "eslint": "^9.35.0",
+    "globals": "^16.4.0",
+    "nodemon": "^2.0.22"
+  }
+}
