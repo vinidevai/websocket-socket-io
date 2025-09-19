@@ -1,5 +1,4 @@
-import { alertAndRedirect } from './document.js';
-import { insertDocLink } from './index.js';
+import { insertDocLink, removeDocLink } from './index.js';
 
 /* eslint-disable */
 const socket = io();
@@ -18,9 +17,8 @@ socket.on('add_doc_interface', (docName) => {
   insertDocLink(docName);
 });
 
-socket.on('remove_doc_succeeded', (docName) => {
-  console.log(docName + '2');
-  alertAndRedirect(docName);
+socket.on("remove_doc_succeeded", (docName) => {
+  removeDocLink(docName);
 });
 
 socket.on('doc_exists', (docName) => {

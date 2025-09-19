@@ -1,4 +1,4 @@
-import { updateTextEditor } from './document.js';
+import { alertAndRedirect, updateTextEditor } from './document.js';
 
 // eslint-disable-next-line
 const socket = io();
@@ -19,6 +19,11 @@ function emitDeleteDoc(docName) {
 
 socket.on('text_editor_client', (text) => {
   updateTextEditor(text);
+});
+
+socket.on('remove_doc_succeeded', (docName) => {
+  console.log(docName + '2');
+  alertAndRedirect(docName);
 });
 
 export { emitTextEditor, emitDeleteDoc, select_document };

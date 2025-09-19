@@ -14,10 +14,15 @@ form.addEventListener('submit', (event) => {
 
 function insertDocLink(docName) {
   docsList.innerHTML += `
-    <a href="documento.html?nome=${docName}" class="list-group-item list-group-item-action">
+    <a href="documento.html?nome=${docName}" class="list-group-item list-group-item-action" id="documento-${docName}">
         ${docName}
     </a>
   `;
 }
 
-export { insertDocLink };
+function removeDocLink(docName) {
+  const doc = document.getElementById(`documento-${docName}`);
+  docsList.removeChild(doc);
+}
+
+export { insertDocLink, removeDocLink };
